@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "hybrid_django"
+version = "0.1.0"
+description = ""
+authors = ["Kenny Le <kennyle1412@gmail.com>"]
+readme = "README.md"
+packages = [{include = "hybrid_django"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.2.3"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+ruff = "^0.0.278"
+pytest = "^7.4.0"
+pytest-cov = "^4.1.0"
+pyright = "^1.1.317"
+django-stubs = {extras = ["compatible-mypy"], version = "^4.2.3"}
+pre-commit = "^3.3.3"
+
+[tool.black]
+line-length = 120
+target-version = ['py310']
+
+[tool.ruff]
+line-length = 120
+
+[tool.isort]
+multi_line_output = 3
+line_length = 120
+include_trailing_comma = true
+skip = [".gitignore", ".venv", "venv", ".mypy_cache", ".pytest_cache", ".tox", "build", "dist", "docs", "node_modules"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
